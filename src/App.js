@@ -17,13 +17,21 @@ class App extends Component {
     ]
    })
   }
+
+  nameChanged = (event) =>{
+    this.setState({persons: [
+      {name: event.target.value, age: 21},
+      {name: "Stephany", age: 21}
+    ]
+   })
+  }
   render() {
     const persons = this.state.persons
     return (
       <div className="App">
         <h1> React App </h1>
         <button onClick={() => this.switchName('Maximilian')}>Swith Name </button>
-        <Person name={persons[0].name} age={persons[0].age}> My Hobbie is Raicing </Person>
+        <Person changed={this.nameChanged}name={persons[0].name} age={persons[0].age}> My Hobbie is Raicing </Person>
         <Person name={persons[1].name} age={persons[1].age}
          click={this.switchName.bind(this, "Max!")}/>
       </div>
