@@ -26,14 +26,20 @@ class App extends Component {
    })
   }
   render() {
-    const persons = this.state.persons
+    const persons =(
+      <div>
+      {this.state.persons.map(person => {
+        console.log(person.name)
+        return <Person
+        name={person.name}
+        age={person.age}/>
+      })}
+      </div>
+     );
     return (
       <div className="App">
         <h1> React App </h1>
-        <button onClick={() => this.switchName('Maximilian')}>Swith Name </button>
-        <Person changed={this.nameChanged}name={persons[0].name} age={persons[0].age}> My Hobbie is Raicing </Person>
-        <Person name={persons[1].name} age={persons[1].age}
-         click={this.switchName.bind(this, "Max!")}/>
+       {persons}
       </div>
     );
   }
