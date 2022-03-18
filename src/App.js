@@ -5,15 +5,15 @@ import './App.css';
 
 function App() {
   return (
+    <Router>
       <PageWrapper>
-        <Router>
-          <Routes>
-            <Route path="/home"
-              element={<Home />}
-            />
-          </Routes>
-        </Router>
+        <Routes>
+          <Route path="/"
+            element={<Home />}
+          />
+        </Routes>
       </PageWrapper>
+    </Router>
   );
 }
 
