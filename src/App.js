@@ -1,6 +1,7 @@
 import PageWrapper from './components/PageWrapper';
 import Home from './components/Pages/Home';
 import About from './components/Pages/About';
+import Services from './components/Pages/Services';
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import './App.css';
 
@@ -16,6 +17,9 @@ function App() {
           />
           <Route path="/about"
             element={<About />}
+          />
+          <Route path="/services"
+            element={<Services />}
           />
         </Routes>
       </PageWrapper>
