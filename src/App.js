@@ -1,5 +1,6 @@
 import PageWrapper from './components/PageWrapper';
 import Home from './components/Pages/Home';
+import About from './components/Pages/About';
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import './App.css';
 
@@ -8,8 +9,13 @@ function App() {
     <Router>
       <PageWrapper>
         <Routes>
-          <Route path="/"
+          <Route
+            exact={true} 
+            path="/"
             element={<Home />}
+          />
+          <Route path="/about"
+            element={<About />}
           />
         </Routes>
       </PageWrapper>
