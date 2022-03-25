@@ -5,13 +5,6 @@ class Team extends Component {
     render(){
         return(
             <div>
-                 <Header 
-                    title="Welcome To Our Studio!"
-                    subtitle="IT'S NICE TO MEET YOU"
-                    buttonText="tell me more"
-                    link="/services"
-                    showButton={true}    
-                />
                 <section className="page-section bg-light" id="team">
                     <div className="container">
                         <div className="text-center">
