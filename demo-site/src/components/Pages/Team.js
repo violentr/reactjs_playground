@@ -5,7 +5,7 @@ import  image2 from '../assets/images/team/2.jpg';
 import  image3 from '../assets/images/team/3.jpg';
 
 const team = [
-{title: 'Lead Designer', fullname: 'Parveen Anand', image: image1, socIcon1: 'fa-twitter', socIcon2: 'fa-facebook-f', socIcon3: 'fa-linkedin-in'},
+{title: 'Lead Designer', fullName: 'Parveen Anand', image: image1, socIcon1: 'fa-twitter', socIcon2: 'fa-facebook-f', socIcon3: 'fa-linkedin-in'},
 {title: 'Lead Marketer', fullName: 'Diana Petersen', image: image2, socIcon1: 'fa-twitter', socIcon2: 'fa-facebook-f', socIcon3: 'fa-linkedin-in'},
 {title: 'Lead Developer', fullName: 'Larry Parker', image: image3, socIcon1: 'fa-twitter', socIcon2: 'fa-facebook-f', socIcon3: 'fa-linkedin-in'}
 ];
