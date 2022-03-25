@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
-import Header from '../Common/Header';
+import TeamMember from '../Common/TeamMember';
+import  image1 from '../assets/images/team/1.jpg';
+import  image2 from '../assets/images/team/2.jpg';
+import  image3 from '../assets/images/team/3.jpg';
 
+const team = [
+{title: 'Lead Designer', fullname: 'Parveen Anand', image: image1, socIcon1: 'fa-twitter', socIcon2: 'fa-facebook-f', socIcon3: 'fa-linkedin-in'},
+{title: 'Lead Marketer', fullName: 'Diana Petersen', image: image2, socIcon1: 'fa-twitter', socIcon2: 'fa-facebook-f', socIcon3: 'fa-linkedin-in'},
+{title: 'Lead Developer', fullName: 'Larry Parker', image: image3, socIcon1: 'fa-twitter', socIcon2: 'fa-facebook-f', socIcon3: 'fa-linkedin-in'}
+];
 class Team extends Component {
     render(){
         return(
@@ -12,36 +20,10 @@ class Team extends Component {
                             <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                         </div>
                         <div className="row">
-                            <div className="col-lg-4">
-                                <div className="team-member">
-                                    <img className="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                                    <h4>Parveen Anand</h4>
-                                    <p className="text-muted">Lead Designer</p>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-facebook-f"></i></a>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="team-member">
-                                    <img className="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                                    <h4>Diana Petersen</h4>
-                                    <p className="text-muted">Lead Marketer</p>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-facebook-f"></i></a>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="team-member">
-                                    <img className="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                                    <h4>Larry Parker</h4>
-                                    <p className="text-muted">Lead Developer</p>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-facebook-f"></i></a>
-                                    <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
+                                {team.map((member, index) => {
+                                    return <TeamMember {...member} key={index} />
+                                    }
+                                )}
                         </div>
                         <div className="row">
                             <div className="col-lg-8 mx-auto text-center"><p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
