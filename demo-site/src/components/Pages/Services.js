@@ -14,13 +14,6 @@ class Services extends Component {
     render(){
         return(
             <div>
-                <Header 
-                    title="Welcome To Our Studio!"
-                    subtitle="IT'S NICE TO MEET YOU"
-                    buttonText="tell me more"
-                    link="/services"
-                    showButton={true}    
-                />
                 <section className="page-section" id="services">
                     <div className="container">
                         <div className="text-center">
