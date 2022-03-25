@@ -1,7 +1,16 @@
 import React, {Component} from 'react';
-import Header from '../Common/Header';
 
 class Contact extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            name: '',
+            email: '',
+            phone: '',
+            message: ''
+        }
+    }
     render(){
         return(
             <div>
@@ -15,23 +24,53 @@ class Contact extends Component {
                             <div className="row align-items-stretch mb-5">
                                 <div className="col-md-6">
                                     <div className="form-group">
-                                        <input className="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                                        <input
+                                            className="form-control"
+                                            id="name"
+                                            type="text"
+                                            placeholder="Your Name *"
+                                            data-sb-validations="required"
+                                            value={this.state.name}
+                                            onChange={e => this.setState({name: e.target.value})}
+                                        />
                                         <div className="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                     </div>
                                     <div className="form-group">
 
-                                        <input className="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
+                                        <input
+                                            className="form-control"
+                                            id="email" type="email"
+                                            placeholder="Your Email *"
+                                            data-sb-validations="required,email"
+                                            value={this.state.email}
+                                            onChange={e => this.setState({email: e.target.value})}
+                                        />
                                         <div className="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                         <div className="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                     </div>
                                     <div className="form-group mb-md-0">
-                                        <input className="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                                        <input
+                                            className="form-control"
+                                            id="phone"
+                                            type="tel"
+                                            placeholder="Your Phone *"
+                                            data-sb-validations="required"
+                                            value={this.state.phone}
+                                            onChange={e => this.setState({phone: e.target.value})}
+                                        />
                                         <div className="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="form-group form-group-textarea mb-md-0">
-                                        <textarea className="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
+                                        <textarea
+                                            className="form-control"
+                                            id="message"
+                                            placeholder="Your Message *"
+                                            data-sb-validations="required"
+                                            value={this.state.message}
+                                            onChange={e => this.setState({message: e.target.value})}
+                                        />
                                         <div className="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                                     </div>
                                 </div>
