@@ -1,4 +1,18 @@
 import React, {Component} from 'react';
+import Field from '../Common/Field';
+
+const fields = {
+    sections: [
+        [
+            {name: 'name', elementName: 'input', type: 'text', placeholder: 'Your name'},
+            {name: 'email', elementName: 'input', type: 'email', placeholder: 'Your email'},
+            {name: 'phone', elementName: 'input', type: 'text', placeholder: 'Your name'}
+        ],
+        [
+            {name: 'message', elementName: 'textarea', type: 'text', placeholder: 'Type Your message'}
+        ]
+    ]
+}
 
 class Contact extends Component {
     constructor(props){
