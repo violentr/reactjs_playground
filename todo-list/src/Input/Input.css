@@ -1,0 +1,24 @@
+:root {
+  --brand-color: #0ea5e9;
+  --dark-color: #0f172a;
+  --mid-color: #cbd5e1;
+  --light-color: #ffffff;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+}
+.appInput {
+  width: 40%;
+  min-width: 250px;
+  padding: 1em 2em;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border: none;
+  background-color: #cbd5e1;
+}
