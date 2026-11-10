@@ -1,0 +1,16 @@
+:root {
+  --brand-color: #0ea5e9;
+  --dark-color: #0f172a;
+  --mid-color: #cbd5e1;
+  --light-color: #ffffff;
+}
+
+.appHeader {
+  background-color: var(--brand-color);
+}
+.appTitle {
+  color: var(--dark-color);
+  text-align: center;
+  text-shadow: 0 0 10px #ffffff;
+  padding: 0.5em;
+}
