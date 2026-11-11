@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { nanoid } from "nanoid";
 
 import "./Input.css";
+import TodoList from "../Todo/TodoList";
 
 const Input = () => {
   const [todoList, setTodoList] = useState([]);
@@ -31,13 +32,7 @@ const Input = () => {
           value={inputData}
         />
       </form>
-      {todoList.length > 0 && (
-        <ul>
-          {todoList.map((task) => (
-            <li key={task.id}>{task.todo}</li>
-          ))}
-        </ul>
-      )}
+      <TodoList todoList={todoList} />
     </React.Fragment>
   );
 };
