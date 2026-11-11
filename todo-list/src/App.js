@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header/Header";
-import Input from "./Input/input";
+import Input from "./Input/Input";
 
 const App = () => {
   return (
