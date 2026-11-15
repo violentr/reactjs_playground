@@ -46,10 +46,6 @@ const Input = () => {
     storeLocally(todoList, "todoList");
   };
 
-  const storeLocally = (data, key) => {
-    localStorage.setItem(key, JSON.stringify(data));
-  };
-
   const handleClick = () => {
     setClicks((prev) => prev + 1);
     console.log(`Clicks: ${cicks}`);
