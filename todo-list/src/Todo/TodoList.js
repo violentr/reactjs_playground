@@ -6,7 +6,7 @@ const TodoList = ({ todoList }) => {
     <React.Fragment>
       <ul>
         {todoList.map((task) => (
-          <li>
+          <li key={task.id}>
             <TodoItem key={task.id} task={task} />
           </li>
         ))}

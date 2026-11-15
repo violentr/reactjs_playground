@@ -7,18 +7,31 @@ import TodoList from "../Todo/TodoList";
 const Input = () => {
   const [todoList, setTodoList] = useState([]);
   const [inputData, setInputData] = useState("");
+  const [cicks, setClicks] = useState(0);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
     if (inputData.trim().length <= 0) return;
     setInputData("");
     setTodoList((prev) => [...prev, { todo: inputData, id: nanoid() }]);
+
     console.log("Submitted " + inputData);
+    storeLocally(todoList, "todoList");
+  };
+
+  const storeLocally = (data, key) => {
+    localStorage.setItem(key, JSON.stringify(data));
+  };
+
+  const handleClick = () => {
+    setClicks((prev) => prev + 1);
+    console.log(`Clicks: ${cicks}`);
+    storeLocally(cicks, "cicks");
   };
 
   const onChangeHandler = (event) => {
-    console.log(event.target.value);
     setInputData(event.target.value);
+    console.log(event.target.value);
   };
 
   return (
@@ -29,6 +42,7 @@ const Input = () => {
           placeholder="Add task"
           className="appInput"
           onChange={onChangeHandler}
+          onClick={handleClick}
           value={inputData}
         />
       </form>
