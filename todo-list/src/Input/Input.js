@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { storeLocally } from "../utils.js";
+import { storeLocally, fetchData } from "../utils";
 import { nanoid } from "nanoid";
 
 import "./Input.css";
@@ -16,24 +16,14 @@ const options = {
 const Input = () => {
   const [todoList, setTodoList] = useState([]);
   const [inputData, setInputData] = useState("");
-  const [cicks, setClicks] = useState(0);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(API_URL, options);
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const data = await response.json();
-      setTodoList(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  const [clicks, setClicks] = useState(0);
 
   useEffect(() => {
-    fetchData();
+    fetchData(API_URL, options).then((data) => {
+      if (!data) return setTodoList([]);
+      setTodoList(data);
+      storeLocally(data, "todoList");
+    });
   }, []);
 
   const onSubmitHandler = (event) => {
@@ -43,13 +33,12 @@ const Input = () => {
     setTodoList((prev) => [...prev, { todo: inputData, id: nanoid() }]);
 
     console.log("Submitted " + inputData);
-    storeLocally(todoList, "todoList");
   };
 
   const handleClick = () => {
     setClicks((prev) => prev + 1);
-    console.log(`Clicks: ${cicks}`);
-    storeLocally(cicks, "cicks");
+    console.log(`Clicks: ${clicks}`);
+    storeLocally(clicks, "cicks");
   };
 
   const onChangeHandler = (event) => {
