@@ -57,6 +57,10 @@ const Input = () => {
     console.log(event.target.value);
   };
 
+  const onDeleteHandler = (id) => {
+    setTodoList((prev) => prev.filter((task) => task.id !== id));
+  };
+
   return (
     <React.Fragment>
       <form onSubmit={onSubmitHandler}>
@@ -69,7 +73,7 @@ const Input = () => {
           value={inputData}
         />
       </form>
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} onDelete={onDeleteHandler} />
     </React.Fragment>
   );
 };
